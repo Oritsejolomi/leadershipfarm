@@ -21,14 +21,21 @@
 <body>
     <header class="header">
         <a href="index.html" class="logo">Leadership Farm</a>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="nav">
             <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About Us</a></li>
                 <li><a href="impact.html" class="nav-link">Our Impact</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button id="theme-toggle" class="mode-toggle">Light Mode</button></li>
+                <li><a href="donate.html" class="btn"><span>Donate</span></a></li>
             </ul>
         </nav>
-        <a href="donate.html" class="btn"><span>Donate</span></a>
     </header>
 
     <main>
@@ -65,7 +72,7 @@
             </div>
         </section>
 
-        <section class="social-proof section" style="background: #111;">
+        <section class="social-proof section trusted-by-section">
             <div class="container">
                 <p class="lead"
                     style="text-align: center; margin-bottom: 2rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.2em;">
@@ -80,10 +87,10 @@
             </div>
         </section>
 
-        <section id="mission" class="mission">
+        <section id="mission" class="mission methodology-section">
             <div class="container">
                 <h2 class="section-title">Our Methodology</h2>
-                <p class="lead">A holistic approach to human capital development.</p>
+                <p class="lead" style="margin: 0 auto 3rem auto;">A holistic approach to human capital development.</p>
 
                 <div class="mission-grid">
                     <div class="mission-card">
@@ -113,22 +120,45 @@
             style="padding: 10rem 4rem; text-align: center; background: linear-gradient(to bottom, var(--color-bg), #111);">
             <div class="container">
                 <h2 class="section-title">Join the Movement</h2>
-                <p class="lead">Stay updated on our latest initiatives and success stories.</p>
+                <p class="lead" style="margin: 0 auto 3rem auto;">Stay updated on our latest initiatives and success
+                    stories.</p>
                 <a href="contact.html" class="btn"><span>Get Involved</span></a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-brand">
-            <a href="index.html" class="logo">Leadership Farm</a>
-            <p style="color: #666; margin-top: 1rem;">© 2024 Leadership Farm.</p>
+        <div class="footer-column">
+            <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: block;">Leadership Farm</a>
+            <div class="footer-contact-info">
+                <p>The Leadership Farm, Kabulonga, Lusaka</p>
+                <p>+260 962 433 888</p>
+                <p>training.tlf@gmail.com</p>
+            </div>
         </div>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="impact.html">Impact</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
+
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="impact.html">Our Impact</a>
+                <a href="contact.html">Contact</a>
+                <a href="donate.html">Donate</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4>Programs</h4>
+            <div class="footer-links">
+                <a href="impact.html#seed">Seed Academy</a>
+                <a href="impact.html#harvest">Harvest Network</a>
+                <a href="impact.html#global">Global Exchange</a>
+            </div>
+        </div>
+
+        <div class="footer-column" style="justify-content: flex-end;">
+            <p style="color: #666; font-size: 0.8rem;">© 2024 The Leadership Farm.</p>
         </div>
     </footer>
 

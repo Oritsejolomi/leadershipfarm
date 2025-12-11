@@ -9,6 +9,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    if (mobileMenuBtn && navList) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+
+            // Toggle aria-expanded
+            const isExpanded = navList.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+    }
+
+    // Light/Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved user preference, if any, on load of the website
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        if (themeToggle) {
+            themeToggle.textContent = savedTheme === 'light-mode' ? 'Dark Mode' : 'Light Mode';
+        }
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLightMode = body.classList.contains('light-mode');
+
+            // Update button text
+            themeToggle.textContent = isLightMode ? 'Dark Mode' : 'Light Mode';
+
+            // Save preference
+            localStorage.setItem('theme', isLightMode ? 'light-mode' : '');
+        });
+    }
+
     // Intersection Observer for Scroll Animations
     const observerOptions = {
         root: null,
