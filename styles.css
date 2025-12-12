@@ -12,8 +12,11 @@
     /* Rich Black */
     --color-text: #ffffff;
     --color-text-muted: #999999;
-    --color-gold: #D4AF37;
+    --color-gold: #D7992D;
+    /* Updated Essence Gold */
     --color-gold-light: #F4D03F;
+    --color-primary-blue: #1F315F;
+    /* New Primary Blue */
     --color-accent: #C0392B;
     /* Deep Red */
 
@@ -26,6 +29,69 @@
     --section-spacing: 120px;
     --section-spacing-mobile: 80px;
     --container-padding: 5vw;
+
+    /* STRICT TYPOGRAPHY SYSTEM (4 SIZES MAX) */
+    /* Desktop Sizes */
+    --fs-xl: 4.5rem;
+    /* Hero / Main Display */
+    --fs-lg: 2.5rem;
+    /* Section Titles */
+    --fs-md: 1.25rem;
+    /* Subtitles / Lead / Nav */
+    --fs-sm: 1rem;
+    /* Body / Buttons / Meta */
+}
+
+/* Light Mode Theme */
+body.light-mode {
+    --color-bg: #ffffff;
+    --color-text: #050505;
+    /* Pure black text */
+    --color-text-muted: #333333;
+    /* Dark grey for muted text, 80% black equivalent */
+}
+
+body.light-mode .section:nth-child(even) {
+    background-color: #f5f5f5;
+    /* Alternating light gray backgrounds */
+}
+
+
+
+body.light-mode .header.scrolled {
+    background: #1F315FD9;
+    backdrop-filter: blur(10px);
+}
+
+
+
+body.light-mode .footer-links a {
+    color: #FFFFFF;
+}
+
+body.light-mode .footer-links a:hover {
+    color: #F4D03F;
+}
+
+body.light-mode .btn-outline {
+    border-color: #FFFFFF80;
+    color: #FFFFFF;
+}
+
+body.light-mode .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+body.light-mode .mission-card {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .form-input,
+body.light-mode .form-textarea,
+body.light-mode .form-select {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--color-text);
 }
 
 html {
@@ -41,6 +107,7 @@ body {
     /* Improved readability */
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography */
@@ -55,30 +122,53 @@ h6 {
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
+    color: var(--color-text);
+    /* Ensure headers use theme color (black in light mode) */
 }
 
 .display-text {
-    font-size: clamp(3rem, 7vw, 7rem);
+    font-size: var(--fs-xl);
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
-    background: linear-gradient(to right, #fff, #aaa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #FFFFFF;
+    /* Hero text always white */
+}
+
+.display-text-sm {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    /* Adapts to theme */
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: var(--fs-lg);
     margin-bottom: 2rem;
+    color: var(--color-text);
 }
 
-.lead {
-    font-size: 1.25rem;
+.lead,
+.lead-text {
+    font-size: var(--fs-md);
     color: var(--color-text-muted);
     max-width: 700px;
     margin-bottom: 3rem;
     font-weight: 300;
     line-height: 1.6;
+}
+
+.body-text {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: var(--fs-sm);
+    /* Standardize paragraph size */
 }
 
 /* Utilities */
@@ -92,14 +182,49 @@ h6 {
 .section {
     padding: var(--section-spacing) 0;
     position: relative;
+    transition: background-color 0.3s ease;
+    background-color: var(--color-bg);
+    /* Ensure defaults to bg */
 }
+
+/* Methodology Section Specifics */
+.methodology-section {
+    text-align: center;
+    padding: calc(var(--section-spacing) + 2rem) 0;
+    /* Extra padding */
+}
+
+.methodology-section .mission-grid {
+    text-align: left;
+    /* Keep cards left aligned usually looks better, or center content inside */
+}
+
+/* Trusted By Section */
+.trusted-by-section {
+    background-color: #111111;
+}
+
+body.light-mode .trusted-by-section {
+    background-color: #F0F0F0;
+}
+
+/* CTA Section (Join Match) */
+.cta-section {
+    background: #111111;
+}
+
+body.light-mode .cta-section {
+    background: #F0F0F0;
+    /* Match Trusted By */
+}
+
 
 /* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.25rem 3rem;
+    padding: 1rem 2.5rem;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -144,7 +269,25 @@ h6 {
     color: var(--color-text);
 }
 
-.btn-outline:hover {
+body.light-mode .btn-outline {
+    border-color: #00000033;
+    /* Darker border for visibility */
+    color: #000000;
+    /* Black text */
+}
+
+body.light-mode .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+/* Force Hero button to stay white even in light mode (since hero has dark image) */
+body.light-mode .hero .btn-outline {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+body.light-mode .hero .btn-outline:hover {
     border-color: var(--color-gold);
     color: var(--color-gold);
 }
@@ -159,20 +302,36 @@ h6 {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem var(--container-padding);
-    z-index: 100;
+    z-index: 1000;
+    padding: 0;
+    /* Let container handle padding */
+    transition: background 0.3s ease;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.3s ease, background 0.3s ease;
+    height: 100px;
+    padding: 0 var(--container-padding);
+    transition: height 0.3s ease;
 }
 
 .header.scrolled {
-    padding: 1rem var(--container-padding);
-    background: rgba(5, 5, 5, 0.9);
+    background: #050505E6;
     backdrop-filter: blur(10px);
 }
 
+.header.scrolled .header-container {
+    height: 70px;
+}
+
+body.light-mode .header.scrolled {
+    background: #1F315FD9;
+    backdrop-filter: blur(10px);
+}
+
+/* Nav Layout */
 .logo {
     font-family: var(--font-display);
     font-size: 1.5rem;
@@ -180,12 +339,132 @@ h6 {
     color: var(--color-text);
     text-decoration: none;
     letter-spacing: -0.02em;
+    z-index: 1001;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Takes available space left */
+}
+
+.nav-logo-img {
+    height: 30px;
+    /* Adjust height to fit header */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Centered Nav Links */
+.nav-center {
+    flex: 2;
+    /* Takes center space */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.nav-link.active {
+    opacity: 1;
+    color: var(--color-gold);
+}
+
+body.light-mode .nav-link.active {
+    color: var(--color-gold);
+    opacity: 1;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--color-gold);
+}
+
+/* Right Side Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Circular Theme Toggle */
+.mode-toggle.circle-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle.circle-toggle:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: #000;
+}
+
+body.light-mode .mode-toggle.circle-toggle {
+    border-color: rgba(255, 255, 255, 0.5);
+    /* White outline as requested */
+    color: #fff;
+    /* Icon white */
+    background: transparent;
+}
+
+body.light-mode .mode-toggle.circle-toggle:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: #000;
+    /* Icon black on hover */
+}
+
+body.light-mode .header.scrolled .mode-toggle.circle-toggle {
+    border-color: #FFFFFF80;
+    color: #fff;
+}
+
+/* When header is blue/scrolled */
+
+.btn-sm {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+}
+
+
+body.light-mode .logo {
+    color: #fff;
 }
 
 .nav-list {
     display: flex;
     gap: 3rem;
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
@@ -197,6 +476,11 @@ h6 {
     position: relative;
     opacity: 0.7;
     transition: opacity 0.3s ease;
+}
+
+
+body.light-mode .nav-link {
+    color: #fff;
 }
 
 .nav-link:hover {
@@ -216,6 +500,42 @@ h6 {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: 0.3s ease;
+}
+
+/* Force white icons on mobile/all screens generally if header is transparent/dark */
+/* But in light mode scrolled it should be valid contrast. User said: "In Light and Dark mode on mobile, the icon in the navbar should always be white." */
+
+@media (max-width: 1024px) {
+    .mobile-menu-btn span {
+        background-color: #fff !important;
+    }
+
+    .mode-toggle.circle-toggle {
+        border-color: #ffffff80 !important;
+        color: #fff !important;
+    }
+}
+
+body.light-mode .mobile-menu-btn span {
+    background-color: #fff;
 }
 
 /* Hero Section */
@@ -280,9 +600,77 @@ h6 {
     margin-top: 4rem;
 }
 
+/* Service List (Premium Layout) */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode .service-list {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+body.light-mode .service-row {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.service-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+body.light-mode .service-row:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.service-title-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-icon {
+    width: 12px;
+    height: 12px;
+    background: var(--color-gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.service-row h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.service-row p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .service-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
 .mission-card {
     padding: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF1A;
     transition: transform 0.6s var(--ease-out-expo), border-color 0.3s ease;
     height: 100%;
     display: flex;
@@ -297,10 +685,14 @@ h6 {
 .mission-number {
     font-family: var(--font-display);
     font-size: 4rem;
-    color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
     margin-bottom: 1rem;
     display: block;
     line-height: 1;
+}
+
+body.light-mode .mission-number {
+    color: #000000;
 }
 
 .mission-card h3 {
@@ -313,6 +705,15 @@ h6 {
     color: var(--color-text-muted);
     font-size: 0.95rem;
 }
+
+/* Hero Subheading (Lead) Fix for Light Mode and Dark Mode */
+body.light-mode .hero-content .lead,
+.hero-content .lead {
+    color: #FFFFFF;
+    opacity: 0.9;
+    /* Ensure visibility on dark image in ALL modes */
+}
+
 
 /* About Section */
 .about-content {
@@ -348,20 +749,90 @@ h6 {
     gap: 6rem;
 }
 
-/* Partners Grid */
+/* Partners Grid Premium */
 .partners-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    opacity: 0.5;
+    gap: 1.5rem;
 }
 
-.partner-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
+.partner-chip {
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .partner-chip {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #555;
+    background: #fff;
+}
+
+.partner-chip:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Founder Spotlight */
+.founder-spotlight {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    margin-bottom: 8rem;
+    align-items: start;
+}
+
+.founder-img-container {
+    position: relative;
+}
+
+.founder-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.founder-img:hover {
+    filter: grayscale(0%);
+}
+
+.founder-bio h3 {
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.founder-role {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .founder-spotlight {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
 /* Contact Form - Premium Redesign */
@@ -383,7 +854,7 @@ h6 {
     padding: 1rem 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #FFFFFF33;
     color: #fff;
     font-family: var(--font-sans);
     font-size: 1.2rem;
@@ -412,31 +883,28 @@ h6 {
     resize: none;
 }
 
-/* Footer */
-.footer {
-    padding: 4rem var(--container-padding);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+/* DELETE OLD FOOTER STYLES */
+
+.mode-toggle:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
 }
 
-.footer-links a {
-    color: var(--color-text-muted);
-    margin-right: 2rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--color-text);
+body.light-mode .mode-toggle {
+    border-color: #FFFFFF80;
+    color: #fff;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     :root {
         --container-padding: 6vw;
+
+        /* Mobile Sizes (Still 4 sizes max) */
+        --fs-xl: 3rem;
+        --fs-lg: 2rem;
+        --fs-md: 1.1rem;
+        --fs-sm: 0.95rem;
     }
 
     .mission-grid,
@@ -450,9 +918,33 @@ h6 {
         height: 400px;
     }
 
+
+
     .nav-list {
         display: none;
-        /* Mobile menu implementation needed */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-bg);
+        z-index: 1000;
+        padding: 6rem var(--container-padding);
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    body.light-mode .nav-list {
+        background: var(--color-primary-blue);
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
     }
 
     .display-text {
@@ -461,5 +953,184 @@ h6 {
 
     .section {
         padding: var(--section-spacing-mobile) 0;
+    }
+
+    .cta-section {
+        padding: 6rem 2rem;
+        /* Reduce padding on mobile */
+        text-align: center;
+    }
+
+    /* Mobile Header Layout Adjustments */
+    /* Mobile Header Layout Adjustments */
+    .nav-center .nav-links,
+    .nav-actions .btn,
+    .nav-center {
+        display: none;
+    }
+
+    .nav-center.active {
+        display: flex;
+    }
+
+    .nav-center.active .nav-links {
+        display: flex;
+        /* Ensure inner list is visible */
+    }
+
+    .header-container {
+        justify-content: space-between;
+        height: 70px;
+        /* Fixed height mobile */
+    }
+
+    .nav-actions {
+        flex: 0;
+        /* Minimize space */
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        order: 2;
+    }
+
+    /* Mobile Nav Drawer */
+    .nav-center.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-bg);
+        z-index: 999;
+        padding-top: 6rem;
+        justify-content: flex-start;
+    }
+
+    .nav-center.active .nav-links {
+        flex-direction: column;
+        font-size: 1.5rem;
+    }
+
+    body.light-mode .nav-center.active {
+        background: var(--color-primary-blue);
+    }
+}
+
+/* PREMIUM FOOTER STYLES */
+.footer-premium {
+    background: #000;
+    padding: 5rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+body.light-mode .footer-premium {
+    background: var(--color-primary-blue);
+    /* or retain black if preferred, usually footer stays dark is classy */
+    /* User request: "footer should have plain white text". So Blue bg is fine */
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-nav-group h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-nav li a,
+.footer-contact li,
+.footer-contact li a {
+    color: #fff;
+    /* Plain white text */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav li a:hover,
+.footer-contact li a:hover {
+    color: var(--color-gold);
+}
+
+.btn-text {
+    display: inline-block;
+    color: var(--color-gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
 }

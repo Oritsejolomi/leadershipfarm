@@ -19,16 +19,30 @@
 
 <body>
     <header class="header">
-        <a href="index.html" class="logo">Leadership Farm</a>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="impact.html" class="nav-link" style="opacity: 1; color: var(--color-gold);">Our Impact</a>
-                </li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="donate.html" class="btn"><span>Donate</span></a>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="leadershipfarmnavbarlogo.png" alt="Logo" class="nav-logo-img"> Leadership Farm
+            </a>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="impact.html" class="nav-link active">Our Impact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="donate.html" class="btn btn-sm"><span>Donate</span></a>
+                <button id="theme-toggle" class="mode-toggle circle-toggle" aria-label="Toggle Theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -46,65 +60,141 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title" style="text-align: center; margin-bottom: 4rem;">Our Programs</h2>
+                <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Service Bouquets</h2>
+                <p class="lead" style="text-align: center; margin-bottom: 4rem;">Empowering individuals and
+                    organisations to reach new heights.</p>
 
-                <!-- Program 1 -->
-                <div class="about-content" style="margin-bottom: 6rem;">
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop"
-                            alt="Seed Academy">
+                <div class="service-list">
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Leadership</h3>
+                        </div>
+                        <p>Exploring Servant, Transformational, Adaptive, Responsible (S.T.A.R.) leadership competencies
+                            and strategic execution. Through tailored sessions, your leadership team will master the art
+                            of guiding the organization through evolving landscapes.</p>
                     </div>
-                    <div class="about-text">
-                        <h3 class="display-text" style="font-size: 2.5rem; margin-bottom: 1rem;">The Seed Academy</h3>
-                        <p class="lead" style="font-size: 1.1rem; margin-bottom: 1.5rem;">For Ages 10-15</p>
-                        <p style="margin-bottom: 1rem; color: #ccc;">The formative years are critical. The Seed Academy
-                            is an after-school program designed to instill core values and critical thinking skills
-                            early.</p>
-                        <ul style="list-style: disc; padding-left: 1.5rem; color: #ccc; margin-bottom: 2rem;">
-                            <li style="margin-bottom: 0.5rem;">Public Speaking & Debate Workshops</li>
-                            <li style="margin-bottom: 0.5rem;">Ethical Leadership Modules</li>
-                            <li style="margin-bottom: 0.5rem;">Community Service Projects</li>
-                        </ul>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Mindset Transformation</h3>
+                        </div>
+                        <p>Immerse your teams in growth-oriented mindset transformation initiatives, cultivating an
+                            environment that equips them with the right mindset for adaptability and innovation.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Success & Self-Actualization</h3>
+                        </div>
+                        <p>Nourish individual and team growth with programs designed to enhance personal and
+                            professional skills, creating a foundation for lasting success.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Theories of Change</h3>
+                        </div>
+                        <p>Navigate the dynamic business environment with strategic alignment workshops, synchronizing
+                            organizational strategies with actionable, people-focused plans.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Entrepreneurship</h3>
+                        </div>
+                        <p>Cultivating an entrepreneurial mindset within your teams, helping them think as entrepreneurs
+                            prepared to face challenges and see opportunities for financial empowerment.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Money Matters</h3>
+                        </div>
+                        <p>A comprehensive repository of financial insights. Beyond basics, providing strategic tips and
+                            roadmaps for distinct financial management and long-term success.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Self-care</h3>
+                        </div>
+                        <p>Prioritizing employee well-being for organizational success. Focused on work-life balance and
+                            transformative concepts for outstanding professional performance.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon"></div>
+                            <h3>Conflict Resolution</h3>
+                        </div>
+                        <p>Providing essential skills for effective conflict navigation and resolution. Participants
+                            learn effective communication and collaborative problem-solving to build resilient teams.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Program 2 -->
-                <div class="about-content" style="flex-direction: row-reverse;">
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop"
-                            alt="Harvest Network">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 2rem; margin-top: 6rem;">Game
+                    Changers Program</h2>
+                <p class="lead" style="text-align: center; margin-bottom: 4rem;">Investing in the influencers who guide
+                    our youth.</p>
+
+                <div class="service-list">
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon" style="background: var(--color-text);"></div>
+                            <h3>Teachers</h3>
+                        </div>
+                        <p>By investing in the teacher as a person, we cultivate educators who can inspire and
+                            positively influence their students.</p>
                     </div>
-                    <div class="about-text">
-                        <h3 class="display-text" style="font-size: 2.5rem; margin-bottom: 1rem;">The Harvest Network
-                        </h3>
-                        <p class="lead" style="font-size: 1.1rem; margin-bottom: 1.5rem;">For Ages 16-25</p>
-                        <p style="margin-bottom: 1rem; color: #ccc;">Transitioning to adulthood requires guidance. The
-                            Harvest Network connects ambitious young people with mentors and career opportunities.</p>
-                        <ul style="list-style: disc; padding-left: 1.5rem; color: #ccc; margin-bottom: 2rem;">
-                            <li style="margin-bottom: 0.5rem;">1-on-1 Mentorship with Industry Leaders</li>
-                            <li style="margin-bottom: 0.5rem;">University Application Support</li>
-                            <li style="margin-bottom: 0.5rem;">Internship Placements</li>
-                        </ul>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon" style="background: var(--color-text);"></div>
+                            <h3>Parents</h3>
+                        </div>
+                        <p>Empowering parents to be mentors, nurturing the overall well-being of their children and
+                            cultivating a sense of purpose through the family unit.</p>
+                    </div>
+
+                    <div class="service-row">
+                        <div class="service-title-group">
+                            <div class="service-icon" style="background: var(--color-text);"></div>
+                            <h3>Community Leaders</h3>
+                        </div>
+                        <p>Community leaders undergo transformative self-development training to effectively guide and
+                            serve their people.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background: #111;">
+        <section class="section">
             <div class="container">
                 <h2 class="section-title" style="text-align: center;">By The Numbers</h2>
                 <div class="mission-grid" style="text-align: center;">
                     <div class="mission-card">
-                        <span class="mission-number" style="color: var(--color-gold);">5,000+</span>
-                        <p>Lives Touched</p>
+                        <span class="mission-number" style="color: var(--color-gold);">4,800+</span>
+                        <p>Youths Trained</p>
                     </div>
                     <div class="mission-card">
-                        <span class="mission-number" style="color: var(--color-gold);">10</span>
-                        <p>African Nations</p>
+                        <span class="mission-number" style="color: var(--color-gold);">13,000+</span>
+                        <p>Meals Served</p>
                     </div>
                     <div class="mission-card">
-                        <span class="mission-number" style="color: var(--color-gold);">95%</span>
-                        <p>University Acceptance Rate</p>
+                        <span class="mission-number" style="color: var(--color-gold);">9</span>
+                        <p>Months Mentorship</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="mission-number" style="color: var(--color-gold);">60+</span>
+                        <p>Pupils Impacted</p>
                     </div>
                 </div>
             </div>
@@ -137,16 +227,49 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-brand">
-            <a href="index.html" class="logo">Leadership Farm</a>
-            <p style="color: #666; margin-top: 1rem;">© 2024 Leadership Farm.</p>
-        </div>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="impact.html">Impact</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Leadership Farm</a>
+                    <p class="footer-tagline">Cultivating the next generation of African excellence, ethics, and
+                        leadership.</p>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Organization</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Programs</h4>
+                    <ul class="footer-nav">
+                        <li><a href="impact.html#leadership">Leadership</a></li>
+                        <li><a href="impact.html#mindset">Mindset</a></li>
+                        <li><a href="impact.html#entrepreneurship">Entrepreneurship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Connect</h4>
+                    <ul class="footer-contact">
+                        <li>Kabulonga, Lusaka, Zambia</li>
+                        <li><a href="mailto:training.tlf@gmail.com">training.tlf@gmail.com</a></li>
+                        <li>+260 962 433 888 | +260 979 672 587</li>
+                    </ul>
+                    <a href="donate.html" class="btn-text">Support Our Mission →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 The Leadership Farm. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LN</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
         </div>
     </footer>
 

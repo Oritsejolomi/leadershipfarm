@@ -19,16 +19,30 @@
 
 <body>
     <header class="header">
-        <a href="index.html" class="logo">Leadership Farm</a>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="about.html" class="nav-link" style="opacity: 1; color: var(--color-gold);">About Us</a>
-                </li>
-                <li><a href="impact.html" class="nav-link">Our Impact</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="donate.html" class="btn"><span>Donate</span></a>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="leadershipfarmnavbarlogo.png" alt="Logo" class="nav-logo-img"> Leadership Farm
+            </a>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="donate.html" class="btn btn-sm"><span>Donate</span></a>
+                <button id="theme-toggle" class="mode-toggle circle-toggle" aria-label="Toggle Theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -39,7 +53,7 @@
             </div>
             <div class="hero-content">
                 <h1 class="display-text">Our Story.</h1>
-                <p class="lead">From a small gathering under a tree to a pan-African movement.</p>
+                <p class="lead">Formed in 2002 with the vision of inspiring Africa's Transformation.</p>
             </div>
         </section>
 
@@ -48,14 +62,13 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2 class="section-title">The Origin</h2>
-                        <p class="lead">It started with a simple observation: Talent is everywhere, but opportunity is
-                            not.</p>
-                        <p style="margin-bottom: 1.5rem; color: #ccc;">Founded in 2015 by [Founder Name], Leadership
-                            Farm began as a weekend mentorship program for 10 students in Lagos. The goal was not just
-                            to help them pass exams, but to help them understand their potential as future leaders of
-                            the continent.</p>
-                        <p style="color: #ccc;">Today, we have grown into a multi-national organization, but our core
-                            philosophy remains the same: We plant seeds of greatness in fertile minds.</p>
+                        <p class="lead">We are a growing organization with expertise in transformational leadership
+                            focused on different key thematic areas.</p>
+                        <p style="margin-bottom: 1.5rem;">The Leadership Farm was formed in 2002 and registered in 2008.
+                            We believe that leadership can be taught and just like a farmer grows crops based on a
+                            science, we can grow leadership that is fit for purpose to deliver strategic goals.</p>
+                        <p>Our passion is to cultivate and unlock the human potential leading to organisational
+                            transformation. We empower individuals and organisations to reach new heights.</p>
                     </div>
                     <div class="about-img">
                         <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2000&auto=format&fit=crop"
@@ -65,7 +78,7 @@
             </div>
         </section>
 
-        <section class="section" style="background: #111;">
+        <section class="section">
             <div class="container">
                 <h2 class="section-title" style="text-align: center;">Our Values</h2>
                 <div class="mission-grid">
@@ -88,62 +101,156 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title" style="text-align: center; margin-bottom: 4rem;">Meet The Team</h2>
-                <div class="mission-grid">
-                    <!-- Team Member 1 -->
-                    <div class="mission-card" style="text-align: center;">
-                        <div
-                            style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold);">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
-                                alt="Team Member" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <h3 style="margin-bottom: 0.5rem;">David O.</h3>
-                        <p
-                            style="color: var(--color-gold); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                            Founder & CEO</p>
-                        <p>Visionary leader with 15+ years in youth development.</p>
+                <h2 class="section-title" style="text-align: center; margin-bottom: 6rem;">Leadership</h2>
+
+                <!-- Founder Spotlight -->
+                <div class="founder-spotlight">
+                    <div class="founder-img-container">
+                        <img src="team-founder.png" alt="Oritsejolomi David" class="founder-img">
                     </div>
+                    <div class="founder-bio">
+                        <h3>Oritsejolomi David</h3>
+                        <span class="founder-role">Founder & Executive Director</span>
+
+                        <p class="bio-text">Gbenebichie Oritsejolomi David is a visionary leader, highly regarded
+                            speaker, author, mentor, and educator specializing in S.T.A.R. (Servant, Transformational,
+                            Authentic, Responsible) leadership. He serves as the Executive Director of The Leadership
+                            Farm, driving the vision of inspiring Africa's transformation.</p>
+
+                        <p class="bio-text">A sought-after consultant, he has collaborated with global organizations
+                            including UN Women, UNESCO, Ministry of Education, Airtel, NAPSA, and ZANACO. notably, he
+                            served as a lead consultant in establishing the National Transformational Leadership
+                            Institute (NTLI) at the University of Juba and the Africa Centre for Transformative and
+                            Inclusive Leadership (ACTIL) at Kenyatta University.</p>
+
+                        <p class="bio-text" style="font-size: 0.95rem; margin-top: 2rem; opacity: 0.8;">
+                            <strong>Qualifications:</strong><br>
+                            - Honorary Doctorate in Ministry (DMin)<br>
+                            - LL.B BL (Nigeria)<br>
+                            - MBA (Lancaster University, UK)<br>
+                            - Ph.D. in Innovative Urban Leadership (In View, Bakke Graduate University, USA)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Core Team Grid -->
+                <h3 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">Executive Team</h3>
+                <div class="mission-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-top: 0;">
                     <!-- Team Member 2 -->
                     <div class="mission-card" style="text-align: center;">
                         <div
                             style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold);">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
-                                alt="Team Member" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="team-ceo.png" alt="David David"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h3 style="margin-bottom: 0.5rem;">Sarah K.</h3>
+                        <h3 style="margin-bottom: 0.5rem;">David David</h3>
                         <p
                             style="color: var(--color-gold); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                            Director of Programs</p>
-                        <p>Expert in curriculum design and educational psychology.</p>
+                            CEO</p>
                     </div>
                     <!-- Team Member 3 -->
                     <div class="mission-card" style="text-align: center;">
                         <div
                             style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold);">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop"
-                                alt="Team Member" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="team-training.png" alt="Astamarie Lumbwe"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h3 style="margin-bottom: 0.5rem;">Michael A.</h3>
+                        <h3 style="margin-bottom: 0.5rem;">Astamarie Lumbwe</h3>
                         <p
                             style="color: var(--color-gold); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                            Head of Partnerships</p>
-                        <p>Connecting our mission with global resources.</p>
+                            Training & Operations</p>
                     </div>
+                    <!-- Team Member 4 -->
+                    <div class="mission-card" style="text-align: center;">
+                        <div
+                            style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold);">
+                            <img src="team-partner.png" alt="Shiela Zulu"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="margin-bottom: 0.5rem;">Shiela Zulu</h3>
+                        <p
+                            style="color: var(--color-gold); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Strategic Partnership</p>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="mission-card" style="text-align: center;">
+                        <div
+                            style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold);">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop"
+                                alt="Emmanuel Makumbia" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="margin-bottom: 0.5rem;">Emmanuel Makumbia</h3>
+                        <p
+                            style="color: var(--color-gold); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Media</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section trusted-by-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 4rem;">Our Clients</h2>
+                <div class="partners-grid">
+                    <div class="partner-chip">UN Women</div>
+                    <div class="partner-chip">UNESCO</div>
+                    <div class="partner-chip">Ministry of Education</div>
+                    <div class="partner-chip">Intercontinental Hotels</div>
+                    <div class="partner-chip">Airtel</div>
+                    <div class="partner-chip">Kenyatta University</div>
+                    <div class="partner-chip">University of Juba</div>
+                    <div class="partner-chip">ZANACO</div>
+                    <div class="partner-chip">NAPSA</div>
+                    <div class="partner-chip">Professional Insurance</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-brand">
-            <a href="index.html" class="logo">Leadership Farm</a>
-            <p style="color: #666; margin-top: 1rem;">© 2024 Leadership Farm.</p>
-        </div>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="impact.html">Impact</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Leadership Farm</a>
+                    <p class="footer-tagline">Cultivating the next generation of African excellence, ethics, and
+                        leadership.</p>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Organization</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Programs</h4>
+                    <ul class="footer-nav">
+                        <li><a href="impact.html#leadership">Leadership</a></li>
+                        <li><a href="impact.html#mindset">Mindset</a></li>
+                        <li><a href="impact.html#entrepreneurship">Entrepreneurship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Connect</h4>
+                    <ul class="footer-contact">
+                        <li>Kabulonga, Lusaka, Zambia</li>
+                        <li><a href="mailto:training.tlf@gmail.com">training.tlf@gmail.com</a></li>
+                        <li>+260 962 433 888 | +260 979 672 587</li>
+                    </ul>
+                    <a href="donate.html" class="btn-text">Support Our Mission →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 The Leadership Farm. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LN</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
         </div>
     </footer>
 

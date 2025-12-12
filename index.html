@@ -20,15 +20,30 @@
 
 <body>
     <header class="header">
-        <a href="index.html" class="logo">Leadership Farm</a>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="impact.html" class="nav-link">Our Impact</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="donate.html" class="btn"><span>Donate</span></a>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="leadershipfarmnavbarlogo.png" alt="Logo" class="nav-logo-img"> Leadership Farm
+            </a>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="donate.html" class="btn btn-sm"><span>Donate</span></a>
+                <button id="theme-toggle" class="mode-toggle circle-toggle" aria-label="Toggle Theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -38,9 +53,10 @@
                     alt="African Youth Leadership">
             </div>
             <div class="hero-content">
-                <h1 class="display-text">Cultivating<br>Greatness.</h1>
-                <p class="lead">We don't just teach leadership. We unlock the dormant potential within every young
-                    African mind.</p>
+                <h1 class="display-text">Inspiring<br>Africa's Transformation.</h1>
+                <p class="lead hero-subheading">Raising the next generation of leaders by identifying, harnessing,
+                    developing, and unleashing their innate potential to become catalysts of national transformation at
+                    every level of society, transforming the nation serving people.</p>
                 <div class="hero-actions">
                     <a href="about.html" class="btn btn-outline">Our Story</a>
                 </div>
@@ -51,56 +67,69 @@
             <div class="container">
                 <div class="content-split">
                     <div class="text-block">
-                        <h2 class="section-title">The Challenge</h2>
-                        <p class="lead">Africa is the youngest continent on Earth. By 2050, 1 in 4 people will be
-                            African. This is either our greatest crisis or our greatest opportunity.</p>
+                        <h2 class="section-title">The Big Problem</h2>
+                        <p class="lead">Africa is the global poverty capital with 424M (over 37%) of people living in
+                            poverty. Uninspired youths make up 75% of the population. Poor leadership is further
+                            weakened by corruption and bribery.</p>
                     </div>
                     <div class="text-block">
-                        <h2 class="section-title">The Solution</h2>
-                        <p class="lead">We believe that talent is universal, but opportunity is not. Leadership Farm
-                            bridges that gap by providing world-class mentorship, education, and resources to the
-                            leaders of tomorrow.</p>
+                        <h2 class="section-title">Vision 2064</h2>
+                        <p class="lead">We can change our narrative and turn our fortunes by organically growing our
+                            youths to transform our nation from third world to first world by 2064. We take a holistic
+                            approach - developing the spirit, soul, and body.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="social-proof section" style="background: #111;">
+        <section class="social-proof section trusted-by-section">
             <div class="container">
-                <p class="lead"
-                    style="text-align: center; margin-bottom: 2rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.2em;">
-                    Trusted By Partners In</p>
+                <div class="section-header-center">
+                    <p class="lead"
+                        style="text-align: center; margin: 0 auto 1rem auto; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-gold);">
+                        Trusted Partners</p>
+                    <p class="body-text" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">We
+                        have had the privilege of collaborating with an array of clients, ranging from small and
+                        medium-sized enterprises to large-scale organisations and international non-profits.</p>
+                </div>
                 <div class="partners-grid">
-                    <!-- Placeholders for partner logos -->
-                    <div class="partner-logo">NIGERIA</div>
-                    <div class="partner-logo">GHANA</div>
-                    <div class="partner-logo">KENYA</div>
-                    <div class="partner-logo">SOUTH AFRICA</div>
+                    <div class="partner-chip">UN Women</div>
+                    <div class="partner-chip">UNESCO</div>
+                    <div class="partner-chip">Ministry of Education</div>
+                    <div class="partner-chip">Intercontinental Hotels</div>
+                    <div class="partner-chip">Airtel</div>
+                    <div class="partner-chip">Kenyatta University</div>
+                    <div class="partner-chip">University of Juba</div>
+                    <div class="partner-chip">ZANACO</div>
+                    <div class="partner-chip">NAPSA</div>
+                    <div class="partner-chip">Professional Insurance</div>
                 </div>
             </div>
         </section>
 
-        <section id="mission" class="mission">
+        <section id="mission" class="mission methodology-section">
             <div class="container">
                 <h2 class="section-title">Our Methodology</h2>
-                <p class="lead">A holistic approach to human capital development.</p>
+                <p class="lead" style="margin: 0 auto 3rem auto;">Influencing the 3 H's—Head, Heart, and Hand—to
+                    empower the individual's spirit, soul, and body.</p>
 
                 <div class="mission-grid">
                     <div class="mission-card">
                         <span class="mission-number">01</span>
-                        <h3>The Seed Academy</h3>
-                        <p>Early intervention for ages 10-15, focusing on ethics, self-discovery, and public speaking.
-                        </p>
+                        <h3>Head</h3>
+                        <p>Knowledge and Understanding. Shaping the mindset to perceive challenges as opportunities for
+                            growth.</p>
                     </div>
                     <div class="mission-card">
                         <span class="mission-number">02</span>
-                        <h3>The Harvest Network</h3>
-                        <p>Advanced leadership training, career prep, and mentorship for young adults ages 16-25.</p>
+                        <h3>Heart</h3>
+                        <p>Values and Character. ensuring that learning becomes an integral part of an individual's
+                            belief system.</p>
                     </div>
                     <div class="mission-card">
                         <span class="mission-number">03</span>
-                        <h3>Global Exchange</h3>
-                        <p>Connecting our scholars with international opportunities and global thought leaders.</p>
+                        <h3>Hand</h3>
+                        <p>Action and Skill. Resulting in profound and enduring change through practical execution.</p>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 4rem;">
@@ -109,26 +138,59 @@
             </div>
         </section>
 
-        <section class="cta-section"
-            style="padding: 10rem 4rem; text-align: center; background: linear-gradient(to bottom, var(--color-bg), #111);">
+        <section class="cta-section" style="padding: 10rem 4rem; text-align: center;">
             <div class="container">
                 <h2 class="section-title">Join the Movement</h2>
-                <p class="lead">Stay updated on our latest initiatives and success stories.</p>
+                <p class="lead" style="margin: 0 auto 3rem auto;">Stay updated on our latest initiatives and success
+                    stories.</p>
                 <a href="contact.html" class="btn"><span>Get Involved</span></a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-brand">
-            <a href="index.html" class="logo">Leadership Farm</a>
-            <p style="color: #666; margin-top: 1rem;">© 2024 Leadership Farm.</p>
-        </div>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="impact.html">Impact</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Leadership Farm</a>
+                    <p class="footer-tagline">Cultivating the next generation of African excellence, ethics, and
+                        leadership.</p>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Organization</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Programs</h4>
+                    <ul class="footer-nav">
+                        <li><a href="impact.html#leadership">Leadership</a></li>
+                        <li><a href="impact.html#mindset">Mindset</a></li>
+                        <li><a href="impact.html#entrepreneurship">Entrepreneurship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Connect</h4>
+                    <ul class="footer-contact">
+                        <li>Kabulonga, Lusaka, Zambia</li>
+                        <li><a href="mailto:training.tlf@gmail.com">training.tlf@gmail.com</a></li>
+                        <li>+260 962 433 888 | +260 979 672 587</li>
+                    </ul>
+                    <a href="donate.html" class="btn-text">Support Our Mission →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 The Leadership Farm. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LN</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
         </div>
     </footer>
 
