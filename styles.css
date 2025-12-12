@@ -127,10 +127,15 @@ h6 {
 }
 
 .display-text {
-    font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    /* Slightly larger max size for impact */
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    line-height: 1.05;
+    /* Tighter leading */
+    letter-spacing: -0.03em;
+    /* Tighter tracking */
+    margin-bottom: 1.5rem;
+    /* Reduced from 2rem to connect with subhead */
     color: #FFFFFF;
     width: 100%;
     overflow-wrap: break-word;
@@ -148,18 +153,26 @@ h6 {
 
 .section-title {
     font-size: var(--fs-lg);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    /* Standardized to 3rem (48px) */
     color: var(--color-text);
+    text-align: center;
+    letter-spacing: -0.02em;
 }
 
 .lead,
 .lead-text {
     font-size: var(--fs-md);
     color: var(--color-text-muted);
-    max-width: 700px;
+    max-width: 65ch;
+    /* Optimal line length for readability */
     margin-bottom: 3rem;
-    font-weight: 300;
+    font-weight: 400;
+    /* Increased slightly from 300 for legibility */
     line-height: 1.6;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .body-text {
@@ -182,11 +195,19 @@ p {
 }
 
 .section {
-    padding: var(--section-spacing) 0;
+    padding: 120px 0;
+    /* Standard desktop padding */
     position: relative;
     transition: background-color 0.3s ease;
     background-color: var(--color-bg);
     /* Ensure defaults to bg */
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+        /* Standard mobile padding */
+    }
 }
 
 /* Methodology Section Specifics */
@@ -551,6 +572,12 @@ body.light-mode .mobile-menu-btn span {
     overflow: hidden;
 }
 
+.hero.hero-sub {
+    height: 60vh;
+    min-height: 500px;
+    /* Safeguard for small screens */
+}
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -616,10 +643,10 @@ body.light-mode .service-list {
 }
 
 .service-row {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
-    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background 0.3s ease;
 }
@@ -640,14 +667,33 @@ body.light-mode .service-row:hover {
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chevron-icon {
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    color: var(--color-gold);
+    margin-left: auto;
+}
+
+.service-row.active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.service-inner {
+    padding-top: 1rem;
 }
 
 .service-icon {
-    width: 12px;
-    height: 12px;
-    background: var(--color-gold);
-    border-radius: 50%;
-    flex-shrink: 0;
+    display: none;
 }
 
 .service-row h3 {
@@ -709,10 +755,19 @@ body.light-mode .mission-number {
 }
 
 /* Hero Subheading (Lead) Fix for Light Mode and Dark Mode */
+.hero-subheading {
+    text-align: left;
+    margin-left: 0;
+}
+
 body.light-mode .hero-content .lead,
 .hero-content .lead {
     color: #FFFFFF;
     opacity: 0.9;
+    text-align: left;
+    margin-left: 0;
+    max-width: 650px;
+    /* Specific max-width for hero subheads to avoid long lines */
     /* Ensure visibility on dark image in ALL modes */
 }
 
@@ -1135,4 +1190,357 @@ body.light-mode .footer-premium {
         gap: 1rem;
         text-align: center;
     }
+}
+
+/* Premium Stats Section */
+.stats-premium {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+body.light-mode .stats-premium {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+}
+
+.stat-symbol {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    color: var(--color-gold);
+    margin-left: -5px;
+    margin-top: 5px;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .stats-premium {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        padding: 3rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-premium {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DONATE PAGE STYLES */
+
+/* Donation Grid */
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .donation-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Donation Cards */
+.donation-card {
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    /* Optional: slight rounding */
+    background: transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+}
+
+.donation-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.donation-card p {
+    margin-bottom: 2rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Price Container */
+.price-container {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-amount {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: #fff;
+}
+
+.price-period {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.btn.full-width {
+    width: 100%;
+    margin-top: auto;
+    /* Push button to bottom */
+}
+
+/* Popular Card */
+.donation-card.popular {
+    border: 1px solid var(--color-gold);
+    transform: scale(1.05);
+    position: relative;
+    background: rgba(212, 163, 115, 0.05);
+    /* Slight tint */
+}
+
+.donation-card.popular:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.popular-badge {
+    background: var(--color-gold);
+    color: #000;
+    padding: 0.25rem 1rem;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.donation-card.popular h3 {
+    color: var(--color-gold);
+}
+
+/* LIGHT MODE OVERRIDES - DONATION CARDS */
+body.light-mode .donation-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .donation-card h3 {
+    color: var(--color-primary-blue);
+}
+
+body.light-mode .donation-card.popular h3 {
+    color: var(--color-gold);
+    /* Keep gold for popular */
+}
+
+body.light-mode .donation-card p {
+    color: #555;
+}
+
+body.light-mode .price-amount {
+    color: var(--color-text);
+}
+
+body.light-mode .price-period {
+    color: #777;
+}
+
+body.light-mode .donation-card:hover {
+    border-color: var(--color-gold);
+}
+
+body.light-mode .donation-card.popular {
+    background: #fff;
+    border-color: var(--color-gold);
+}
+
+
+/* Transparency Section */
+.transparency-section {
+    background: #111;
+    color: #fff;
+}
+
+body.light-mode .transparency-section {
+    background: #f9f9f9;
+    color: var(--color-text);
+}
+
+.chart-legend {
+    list-style: none;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.chart-legend li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+body.light-mode .chart-legend li {
+    color: var(--color-text);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.legend-color.programs {
+    background: var(--color-gold);
+}
+
+.legend-color.admin {
+    background: #555;
+}
+
+.legend-color.fundraising {
+    background: #333;
+}
+
+/* Light mode legend colors adjustment if needed */
+body.light-mode .legend-color.admin {
+    background: #aaa;
+}
+
+body.light-mode .legend-color.fundraising {
+    background: #ddd;
+}
+
+
+/* Custom Pie Chart */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-chart {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Default Dark Mode Gradient */
+    background: conic-gradient(var(--color-gold) 0% 85%,
+            #555 85% 95%,
+            #333 95% 100%);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .pie-chart {
+    background: conic-gradient(var(--color-gold) 0% 85%,
+            #aaa 85% 95%,
+            #ddd 95% 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.chart-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+body.light-mode .chart-center {
+    background: #fff;
+}
+
+.chart-text {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+}
+
+body.light-mode .chart-text {
+    color: var(--color-primary-blue);
+}
+
+.chart-subtext {
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 5px;
+    color: var(--color-text-muted);
+}
+
+/* Origin Section Specific */
+.origin-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.origin-content p {
+    margin-bottom: 2rem;
 }

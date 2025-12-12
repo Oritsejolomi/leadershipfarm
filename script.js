@@ -130,4 +130,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Service Bouquet Collapsible
+    const serviceGroups = document.querySelectorAll('.service-title-group');
+    serviceGroups.forEach(group => {
+        group.addEventListener('click', () => {
+            const row = group.closest('.service-row');
+            const content = row.querySelector('.service-content');
+
+            // Toggle active state
+            row.classList.toggle('active');
+
+            // Handle max-height for smooth animation
+            if (row.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = "0";
+            }
+        });
+    });
+
+    // Stats Counter Animation
+    const statsSection = document.querySelector('.stats-premium');
+    const statsNumbers = document.querySelectorAll('.stat-number');
+
+    if (statsSection) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statsNumbers.forEach(stat => {
+                        const target = +stat.getAttribute('data-target');
+                        const duration = 2000; // 2 seconds
+                        const increment = target / (duration / 16); // 60fps
+
+                        let current = 0;
+                        const updateCount = () => {
+                            current += increment;
+                            if (current < target) {
+                                stat.innerText = Math.ceil(current).toLocaleString();
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                stat.innerText = target.toLocaleString();
+                            }
+                        };
+                        updateCount();
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        statsObserver.observe(statsSection);
+    }
 });
