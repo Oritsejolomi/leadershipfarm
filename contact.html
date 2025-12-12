@@ -20,23 +20,30 @@
 
 <body>
     <header class="header">
-        <a href="index.html" class="logo">Leadership Farm</a>
-        <button class="mobile-menu-btn" aria-label="Toggle Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="impact.html" class="nav-link">Our Impact</a></li>
-                <li><a href="contact.html" class="nav-link" style="opacity: 1; color: var(--color-gold);">Contact</a>
-                </li>
-                <li><button id="theme-toggle" class="mode-toggle">Light Mode</button></li>
-                <li><a href="donate.html" class="btn"><span>Donate</span></a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="leadershipfarmnavbarlogo.png" alt="Logo" class="nav-logo-img"> Leadership Farm
+            </a>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="donate.html" class="btn btn-sm"><span>Donate</span></a>
+                <button id="theme-toggle" class="mode-toggle circle-toggle" aria-label="Toggle Theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -57,15 +64,19 @@
                 <div class="about-content" style="align-items: flex-start;">
                     <div class="about-text">
                         <h2 class="section-title">Global HQ</h2>
-                        <p class="lead" style="margin-bottom: 3rem;">The Leadership Farm<br>Kabulonga,
-                            Lusaka<br>Zambia</p>
+                        <p class="lead" style="margin-bottom: 3rem;">The Leadership Farm, Kabulonga, Lusaka<br>Zambia
+                        </p>
 
                         <div style="margin-bottom: 2rem;">
                             <h3
                                 style="color: var(--color-gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">
                                 Email</h3>
                             <p><a href="mailto:training.tlf@gmail.com"
-                                    style="color: var(--color-text); text-decoration: none; font-size: 1.2rem;">training.tlf@gmail.com</a>
+                                    style="color: var(--color-text); text-decoration: none; font-size: 1.2rem; display: block;">training.tlf@gmail.com</a>
+                                <a href="mailto:jolomi.tlf@gmail.com"
+                                    style="color: var(--color-text); text-decoration: none; font-size: 1.2rem; display: block;">jolomi.tlf@gmail.com</a>
+                                <a href="mailto:ddavid.tlf@gmail.com"
+                                    style="color: var(--color-text); text-decoration: none; font-size: 1.2rem; display: block;">ddavid.tlf@gmail.com</a>
                             </p>
                         </div>
 
@@ -128,38 +139,49 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-column">
-            <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: block;">Leadership Farm</a>
-            <div class="footer-contact-info">
-                <p>The Leadership Farm, Kabulonga, Lusaka</p>
-                <p>+260 962 433 888</p>
-                <p>training.tlf@gmail.com</p>
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Leadership Farm</a>
+                    <p class="footer-tagline">Cultivating the next generation of African excellence, ethics, and
+                        leadership.</p>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Organization</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Programs</h4>
+                    <ul class="footer-nav">
+                        <li><a href="impact.html#leadership">Leadership</a></li>
+                        <li><a href="impact.html#mindset">Mindset</a></li>
+                        <li><a href="impact.html#entrepreneurship">Entrepreneurship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Connect</h4>
+                    <ul class="footer-contact">
+                        <li>Kabulonga, Lusaka, Zambia</li>
+                        <li><a href="mailto:training.tlf@gmail.com">training.tlf@gmail.com</a></li>
+                        <li>+260 962 433 888 | +260 979 672 587</li>
+                    </ul>
+                    <a href="donate.html" class="btn-text">Support Our Mission →</a>
+                </div>
             </div>
-        </div>
-
-        <div class="footer-column">
-            <h4>Quick Links</h4>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="impact.html">Our Impact</a>
-                <a href="contact.html">Contact</a>
-                <a href="donate.html">Donate</a>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 The Leadership Farm. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LN</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
             </div>
-        </div>
-
-        <div class="footer-column">
-            <h4>Programs</h4>
-            <div class="footer-links">
-                <a href="impact.html#seed">Seed Academy</a>
-                <a href="impact.html#harvest">Harvest Network</a>
-                <a href="impact.html#global">Global Exchange</a>
-            </div>
-        </div>
-
-        <div class="footer-column" style="justify-content: flex-end;">
-            <p style="color: #666; font-size: 0.8rem;">© 2024 The Leadership Farm.</p>
         </div>
     </footer>
 
