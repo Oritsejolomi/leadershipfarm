@@ -127,11 +127,13 @@ h6 {
 }
 
 .display-text {
-    font-size: var(--fs-xl);
+    font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
     color: #FFFFFF;
+    width: 100%;
+    overflow-wrap: break-word;
     /* Hero text always white */
 }
 
@@ -947,9 +949,9 @@ body.light-mode .mode-toggle {
         font-size: 1.5rem;
     }
 
-    .display-text {
+    /* .display-text {
         font-size: 3.5rem;
-    }
+    } */
 
     .section {
         padding: var(--section-spacing-mobile) 0;
